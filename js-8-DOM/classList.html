@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classlist</title>
+</head>
+<body>
+    <div class="item">One</div>
+    <div class="item">Two</div>
+    <div class="item">Three</div>
+    <script>
+        const firstItem = document.querySelector(".item");
+
+        // Add a class
+        firstItem.classList.add("highlight");
+
+        // Remove a class
+        firstItem.classList.remove("highlight");
+
+        // Toggle a class
+        firstItem.classList.toggle("active");
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P4</title>
+</head>
+<body>
+    <div id = "doubleHolder">
+      <button class = "double">double</button>
+    </div>
+
+    <script>
+        //Q1. Create a button that is destroyed by clicking
+        //on it but two new buttons are created in it's place.
+        const div=document.querySelector("#doubleHolder")
+        const button=document.querySelector(".double")
+
+        button.addEventListener('click',()=>{
+            button.remove()
+            const button1=document.createElement("button")
+            button1.innerText="button1"
+            const button2=document.createElement("button")
+            button2.innerText="button2"
+            const br=document.createElement("br")
+            div.appendChild(button1)
+            div.appendChild(br)
+            div.appendChild(button2)
+        })
+        // Advanced Q: Remove doubleholder1, created doubleholder 2 and a new button
+        
+    </script>
+</body>
+</html>
