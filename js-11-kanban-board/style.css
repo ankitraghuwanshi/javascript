@@ -1,31 +1,74 @@
 *{
-    margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 body{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
     background-color: rgb(161, 161, 243);
 }
 header{
-
+    margin-left: 45%;
+    color: #3d3d3d
 }
-.nav-container{
-
+.toolbox-cont{
+    height: 5rem; /* means 5*16px */
+    background-color: #4b4b4b;
+    display: flex;
+    align-items: center;
 }
-.colorBox-container{
-
+.toolbox-cont > *{
+    margin-left: 4rem;
+}
+.toolbox-priority-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 3.5rem;
+    width: 18rem;
+    background-color: #3d3d3d;
 }
 .color{
+    height: 1.5rem;
+    width: 3rem;
+}
 
-}
 .lightpink{
-    background-color: rgb(250, 154, 169);
+    background-color: lightpink;
 }
+.lightpink:hover{
+    background-color: rgb(247, 93, 118);
+    height: 1.6rem;
+    width: 3.1rem;
+    cursor: pointer;
+}
+
 .lightyellow{
-    background-color: rgb(245, 245, 96);
+    background-color: rgb(239, 239, 65);
 }
+.lightyellow:hover{
+    background-color: yellow;
+    height: 1.6rem;
+    width: 3.1rem;
+    cursor: pointer;
+}
+
 .lightgreen{
-    background-color: rgb(141, 246, 141);
+    background-color: lightgreen;
 }
-.actionBox-container{
-    
+.lightgreen:hover{
+    background-color: green;
+    height: 1.6rem;
+    width: 3.1rem;
+    cursor: pointer;
+}
+
+.lightblue{
+    background-color: lightblue;
+}
+.lightblue:hover{
+    background-color: blue;
+    height: 1.6rem;
+    width: 3.1rem;
+    cursor: pointer;
 }
