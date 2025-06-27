@@ -36,7 +36,7 @@ function createTicket(){
             <i class="fa-solid fa-lock"></i>
         </div>
     `
-
+    //append ticket inside main
     mainCont.appendChild(ticketCont)
 }
 
