@@ -5,11 +5,12 @@ body{
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background-color: rgb(161, 161, 243);
+    background-color: rgb(236, 236, 241);
 }
 header{
+    margin-top: 0.5rem;
     margin-left: 45%;
-    color: #3d3d3d
+    height: 1rem;
 }
 .toolbox-cont{
     height: 5rem; /* means 5*16px */
@@ -17,6 +18,7 @@ header{
     display: flex;
     align-items: center;
 }
+/* select all child of toolbox-cont by using */
 .toolbox-cont > *{
     margin-left: 4rem;
 }
@@ -24,13 +26,13 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 3.5rem;
-    width: 18rem;
+    height: 4rem;
+    width: 20rem;
     background-color: #3d3d3d;
 }
 .color{
-    height: 1.5rem;
-    width: 3rem;
+    height: 2rem;
+    width: 4rem;
 }
 
 .lightpink{
@@ -38,8 +40,8 @@ header{
 }
 .lightpink:hover{
     background-color: rgb(247, 93, 118);
-    height: 1.6rem;
-    width: 3.1rem;
+    height: 2rem;
+    width: 4.1rem;
     cursor: pointer;
 }
 
@@ -48,8 +50,8 @@ header{
 }
 .lightyellow:hover{
     background-color: yellow;
-    height: 1.6rem;
-    width: 3.1rem;
+    height: 2rem;
+    width: 4.1rem;
     cursor: pointer;
 }
 
@@ -58,8 +60,8 @@ header{
 }
 .lightgreen:hover{
     background-color: green;
-    height: 1.6rem;
-    width: 3.1rem;
+    height: 2rem;
+    width: 4.1rem;
     cursor: pointer;
 }
 
@@ -68,7 +70,64 @@ header{
 }
 .lightblue:hover{
     background-color: blue;
-    height: 1.6rem;
-    width: 3.1rem;
+    height: 2rem;
+    width: 4.1rem;
     cursor: pointer;
+}
+.action-btn-cont{
+    height: 3.5rem;
+    width: 8rem;
+    background-color: #4b4b4b;
+    display: flex;
+}
+.action-btn-cont > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 50%;
+    font-size: 2rem;
+}
+.add-btn:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: green;
+    background-color: #3d3d3d;
+}
+.remove-btn:hover{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: red;
+    background-color: #3d3d3d;
+}
+
+.main-cont{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.ticket-cont{
+    height: 12rem;
+    width: 15rem;
+    background-color: coral;
+    position: relative;
+}
+.ticket-color{
+    height: 1rem;
+}
+.ticket-id{
+    height: 2rem;
+    background-color: yellow;
+}
+.ticket-lock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    bottom: 5px;
+    right: 5px;
 }
