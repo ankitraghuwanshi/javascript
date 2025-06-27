@@ -26,13 +26,19 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 4rem;
-    width: 20rem;
+    height: 5rem;
+    width: 30rem;
     background-color: #3d3d3d;
 }
+.toolbox-priority-cont > *:hover{
+    height: 3.1rem;
+    width: 5.1rem;
+    cursor: pointer;
+}
 .color{
-    height: 2rem;
-    width: 4rem;
+    text-align: center;
+    height: 3rem;
+    width: 5rem;
 }
 
 .lightpink{
@@ -40,9 +46,6 @@ header{
 }
 .lightpink:hover{
     background-color: rgb(247, 93, 118);
-    height: 2rem;
-    width: 4.1rem;
-    cursor: pointer;
 }
 
 .lightyellow{
@@ -50,9 +53,6 @@ header{
 }
 .lightyellow:hover{
     background-color: yellow;
-    height: 2rem;
-    width: 4.1rem;
-    cursor: pointer;
 }
 
 .lightgreen{
@@ -60,19 +60,13 @@ header{
 }
 .lightgreen:hover{
     background-color: green;
-    height: 2rem;
-    width: 4.1rem;
-    cursor: pointer;
 }
 
 .lightblue{
-    background-color: lightblue;
+    background-color: rgb(8, 116, 152);
 }
 .lightblue:hover{
     background-color: blue;
-    height: 2rem;
-    width: 4.1rem;
-    cursor: pointer;
 }
 .action-btn-cont{
     height: 3.5rem;
@@ -130,4 +124,45 @@ header{
     width: 2.5rem;
     bottom: 5px;
     right: 5px;
+}
+
+.modal-cont{
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    height: 50%;
+    width: 45%;
+    background-color: aquamarine;
+    display: flex;
+}
+.textArea-cont{
+    height: 100%;
+    width: 75%;
+    outline: none;
+    border: none;
+    background-color: #dfe4ea;
+    color: black;
+    font-size: 2rem;
+    resize: none;
+}
+.priority-colors-cont{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #4b4b4b;
+}
+.priority-colors-cont > *:hover{
+    height: 3.1rem;
+    width: 5.1rem;
+    cursor: pointer;
+}
+.priority-color{
+    height:3rem;
+    width: 5rem;
+}
+.active{
+    border: 3px solid lightsalmon;
 }
