@@ -133,7 +133,7 @@ header{
     height: 50%;
     width: 45%;
     background-color: aquamarine;
-    display: flex;
+    display: none;
 }
 .textArea-cont{
     height: 100%;
