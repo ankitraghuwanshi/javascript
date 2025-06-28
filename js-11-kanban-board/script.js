@@ -12,6 +12,8 @@ let removeTaskFlag=false
 let modalPriorityColor="lightpink"
 let ticketID=0
 
+const colorArray=['lightpink','lightyellow','lightgreen','lightblue']
+
 addBtn.addEventListener('click',function(){
     //sawp the addTaskFlag
     addTaskFlag = !addTaskFlag
@@ -50,6 +52,9 @@ function createTicket(ticketColor,text,ticketID){
 
     //add handle lock on ticket-cont
     handleLock(ticketCont)
+
+    //handle color of ticket 
+    handleColor(ticketCont)
 
     //append ticket inside main
     mainCont.appendChild(ticketCont)
@@ -144,5 +149,33 @@ function handleLock(ticket){
             //task-area non-editable
             ticketTaskElement.setAttribute("contenteditable","false")
         }
+    })
+}
+
+//function to change ticket/task color
+function handleColor(ticket){
+    //select the color element
+    const colorElem=ticket.querySelector(".ticket-color")
+    //add eventlistener to elem
+    colorElem.addEventListener('click',function(){
+        //get the current color
+        const currentColor=colorElem.classList[1]
+
+        //figure index of color array
+        let currentColorIdx=colorArray.findIndex((color)=>color==currentColor)
+        //or
+        //let currentColorIdx=-1
+        //colorArray.forEach(function(color,idx){if(color==currentColor){currentColorIdx=idx}})
+        
+        //new current color index after click
+        currentColorIdx=(currentColorIdx+1)%(colorArray.length)
+        //so new color will be
+        const newColor=colorArray[currentColorIdx]
+
+        //update color on ticket in two steps
+        //remove current color class
+        colorElem.classList.remove(currentColor)
+        //add new color class
+        colorElem.classList.add(newColor)
     })
 }
