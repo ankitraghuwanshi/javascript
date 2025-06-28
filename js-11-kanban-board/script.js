@@ -39,7 +39,7 @@ function createTicket(ticketColor,text,ticketID){
     //provide innerHtml to ticketCont
     ticketCont.innerHTML=`
         <div class="ticket-color ${ticketColor}"></div>
-        <div class="ticket-id">task-id--${ticketID}</div>
+        <div class="ticket-id">task-${ticketID}</div>
         <div class="task-area">${text}</div>
         <div class="ticket-lock">
             <i class="fa-solid fa-lock"></i>

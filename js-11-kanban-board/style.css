@@ -5,9 +5,10 @@ body{
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background-color: rgb(191, 191, 195);
+    background-color: black;
 }
 header{
+    color: white;
     margin-top: 0.5rem;
     margin-left: 45%;
     height: 1rem;
@@ -156,5 +157,5 @@ header{
     width: 5rem;
 }
 .active{
-    border: 3px solid lightsalmon;
+    border: 3px solid white;
 }
