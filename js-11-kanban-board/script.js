@@ -4,18 +4,25 @@ const modalCont=document.querySelector(".modal-cont")
 const mainCont=document.querySelector(".main-cont")
 const textArea=document.querySelector(".textArea-cont")
 const allPriorityColors=document.querySelectorAll(".priority-color")
+const removeBtn=document.querySelector(".remove-btn")
+
 //let over const
 let addTaskFlag=false
+let removeTaskFlag=false
 let modalPriorityColor="lightpink"
 let ticketID=0
 
 addBtn.addEventListener('click',function(){
     //sawp the addTaskFlag
     addTaskFlag = !addTaskFlag
-    if(addTaskFlag==true){
+    if(addTaskFlag){
+        //add btn color to green
+        addBtn.style.color="green"
         //show modal-cont
         modalCont.style.display="flex"
     }else{
+        //add btn color to white
+        addBtn.style.color="white"
         //hide modal-cont
         modalCont.style.display="none"
     }
@@ -38,6 +45,9 @@ function createTicket(ticketColor,text,ticketID){
             <i class="fa-solid fa-lock"></i>
         </div>
     `
+    //add remove handler on ticket-cont
+    handleRemoval(ticketCont)
+
     //append ticket inside main
     mainCont.appendChild(ticketCont)
 }
@@ -45,6 +55,8 @@ function createTicket(ticketColor,text,ticketID){
 modalCont.addEventListener('keydown',function(e){
     //if we press shift button on modal then ticket generate
     if(e.key=='Shift'){
+        //add btn color change to white
+        addBtn.style.color="white"
         //textarea
         const taskContent=textArea.value
         //pass in the required fields to create create ticket
@@ -74,3 +86,29 @@ allPriorityColors.forEach(function(colorElem){
         modalPriorityColor=colorElem.classList[0]
     })
 })
+
+//delete ticket/task with help of remove-btn
+removeBtn.addEventListener('click',function(){
+    //toggle removeTaskFlag
+    removeTaskFlag=!removeTaskFlag
+    if(removeTaskFlag){
+        //alert
+        alert("deletion activated")
+        //change btn color to red
+        removeBtn.style.color="red"
+    }else{
+        //alert
+        alert("deletion de-activated")
+        //change btn color to white
+        removeBtn.style.color="white"
+    }
+})
+
+//function to handle remove ticket
+function handleRemoval(ticket){
+    ticket.addEventListener('click',function(){
+        if(removeTaskFlag){
+            ticket.remove()
+        }
+    })
+}
