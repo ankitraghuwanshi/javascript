@@ -7,6 +7,7 @@ const allPriorityColors=document.querySelectorAll(".priority-color")
 //let over const
 let addTaskFlag=false
 let modalPriorityColor="lightpink"
+let ticketID=0
 
 addBtn.addEventListener('click',function(){
     //sawp the addTaskFlag
@@ -21,7 +22,7 @@ addBtn.addEventListener('click',function(){
 })
 
 //function to add a new ticket/task
-function createTicket(ticketColor){
+function createTicket(ticketColor,text,ticketID){
     //create a new ticket container element
     const ticketCont=document.createElement("div")
 
@@ -30,9 +31,9 @@ function createTicket(ticketColor){
 
     //provide innerHtml to ticketCont
     ticketCont.innerHTML=`
-        <div class="ticket-color" style="background-color:${ticketColor};"></div>
-        <div class="ticket-id">123456</div>
-        <div class="task-area">text area</div>
+        <div class="ticket-color ${ticketColor}"></div>
+        <div class="ticket-id">${ticketID}</div>
+        <div class="task-area">${text}</div>
         <div class="ticket-lock">
             <i class="fa-solid fa-lock"></i>
         </div>
@@ -44,8 +45,12 @@ function createTicket(ticketColor){
 modalCont.addEventListener('keydown',function(e){
     //if we press shift button on modal then ticket generate
     if(e.key=='Shift'){
+        //textarea
+        const taskContent=textArea.value
         //pass in the required fields to create create ticket
-        createTicket(modalPriorityColor)
+        //ticketID + 1
+        ticketID=ticketID + 1
+        createTicket(modalPriorityColor,taskContent,ticketID)
         //modal hide
         modalCont.style.display="none"
         addTaskFlag=!addTaskFlag

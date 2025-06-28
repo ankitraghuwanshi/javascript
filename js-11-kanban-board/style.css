@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 16px;
-    background-color: rgb(236, 236, 241);
+    background-color: rgb(191, 191, 195);
 }
 header{
     margin-top: 0.5rem;
@@ -42,32 +42,18 @@ header{
 }
 
 .lightpink{
-    background-color: lightpink;
+    background-color: rgb(253, 141, 157);
 }
-.lightpink:hover{
-    background-color: rgb(247, 93, 118);
-}
-
 .lightyellow{
-    background-color: rgb(239, 239, 65);
-}
-.lightyellow:hover{
     background-color: yellow;
 }
-
 .lightgreen{
-    background-color: lightgreen;
+    background-color: rgb(107, 202, 107);
 }
-.lightgreen:hover{
-    background-color: green;
+.lightblue{
+    background-color: rgb(55, 148, 179);
 }
 
-.lightblue{
-    background-color: rgb(8, 116, 152);
-}
-.lightblue:hover{
-    background-color: blue;
-}
 .action-btn-cont{
     height: 3.5rem;
     width: 8rem;
@@ -105,15 +91,15 @@ header{
 .ticket-cont{
     height: 12rem;
     width: 15rem;
-    background-color: coral;
+    background-color: white;
     position: relative;
 }
 .ticket-color{
-    height: 1rem;
+    height: 2rem;
 }
 .ticket-id{
-    height: 2rem;
-    background-color: yellow;
+    height: 1rem;
+    background-color: whitesmoke;
 }
 .ticket-lock{
     display: flex;
@@ -125,6 +111,11 @@ header{
     bottom: 5px;
     right: 5px;
 }
+.ticket-lock:hover{
+    cursor: pointer;
+    height: 2.7rem;
+    width: 2.7rem;
+}
 
 .modal-cont{
     position: absolute;
@@ -132,7 +123,6 @@ header{
     left: 25%;
     height: 50%;
     width: 45%;
-    background-color: aquamarine;
     display: none;
 }
 .textArea-cont{
