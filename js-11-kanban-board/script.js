@@ -12,7 +12,11 @@ let removeTaskFlag=false
 let modalPriorityColor="lightpink"
 let ticketID=0
 
+//store all ticket/task color
 const colorArray=['lightpink','lightyellow','lightgreen','lightblue']
+
+//store all ticket/task data
+const taskArray=[]
 
 addBtn.addEventListener('click',function(){
     //sawp the addTaskFlag
@@ -31,7 +35,7 @@ addBtn.addEventListener('click',function(){
 })
 
 //function to add a new ticket/task
-function createTicket(ticketColor,text,ticketID){
+function createTicket(ticketColor,taskContent,taskId){
     //create a new ticket container element
     const ticketCont=document.createElement("div")
 
@@ -41,8 +45,8 @@ function createTicket(ticketColor,text,ticketID){
     //provide innerHtml to ticketCont
     ticketCont.innerHTML=`
         <div class="ticket-color ${ticketColor}"></div>
-        <div class="ticket-id">task-${ticketID}</div>
-        <div class="task-area">${text}</div>
+        <div class="ticket-id">task-${taskId}</div>
+        <div class="task-area">${taskContent}</div>
         <div class="ticket-lock">
             <i class="fa-solid fa-lock"></i>
         </div>
@@ -55,6 +59,9 @@ function createTicket(ticketColor,text,ticketID){
 
     //handle color of ticket 
     handleColor(ticketCont)
+
+    //add ticket/task details inside taskarray
+    taskArray.push({taskId, ticketColor, taskContent})
 
     //append ticket inside main
     mainCont.appendChild(ticketCont)
@@ -166,7 +173,7 @@ function handleColor(ticket){
         //or
         //let currentColorIdx=-1
         //colorArray.forEach(function(color,idx){if(color==currentColor){currentColorIdx=idx}})
-        
+
         //new current color index after click
         currentColorIdx=(currentColorIdx+1)%(colorArray.length)
         //so new color will be
