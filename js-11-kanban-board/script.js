@@ -39,7 +39,7 @@ function createTicket(ticketColor,text,ticketID){
     //provide innerHtml to ticketCont
     ticketCont.innerHTML=`
         <div class="ticket-color ${ticketColor}"></div>
-        <div class="ticket-id">${ticketID}</div>
+        <div class="ticket-id">task-id--${ticketID}</div>
         <div class="task-area">${text}</div>
         <div class="ticket-lock">
             <i class="fa-solid fa-lock"></i>
@@ -47,6 +47,9 @@ function createTicket(ticketColor,text,ticketID){
     `
     //add remove handler on ticket-cont
     handleRemoval(ticketCont)
+
+    //add handle lock on ticket-cont
+    handleLock(ticketCont)
 
     //append ticket inside main
     mainCont.appendChild(ticketCont)
@@ -109,6 +112,37 @@ function handleRemoval(ticket){
     ticket.addEventListener('click',function(){
         if(removeTaskFlag){
             ticket.remove()
+        }
+    })
+}
+
+//function to handle locking mechanism on ticket/task
+function handleLock(ticket){
+    //select the ticket-lock element on ticket
+    const ticketLockElement=ticket.querySelector(".ticket-lock")
+    //select the task-area element on ticket
+    const ticketTaskElement=ticket.querySelector(".task-area")
+    //select the actual icon element
+    const ticketLockIcon=ticketLockElement.children[0]
+    //or
+    //const ticketLockIcon=ticketLockElement.querySelector("i")
+
+    ticketLockIcon.addEventListener('click',function(){
+        //check if icon contain fa-lock class
+        if(ticketLockIcon.classList.contains("fa-lock")){
+            //then remove fa-lock class
+            ticketLockIcon.classList.remove("fa-lock")
+            //then add fa-lock-open class
+            ticketLockIcon.classList.add("fa-lock-open")
+            //task-area editable
+            ticketTaskElement.setAttribute("contenteditable","true")
+        }else{
+            //then remove fa-lock-open class
+            ticketLockIcon.classList.remove("fa-lock-open")
+            //then add fa-lock class
+            ticketLockIcon.classList.add("fa-lock")
+            //task-area non-editable
+            ticketTaskElement.setAttribute("contenteditable","false")
         }
     })
 }

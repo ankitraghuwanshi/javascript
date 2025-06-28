@@ -116,7 +116,9 @@ header{
     height: 2.7rem;
     width: 2.7rem;
 }
-
+.task-area{
+    overflow-wrap: break-word;
+}
 .modal-cont{
     position: absolute;
     top: 30%;
