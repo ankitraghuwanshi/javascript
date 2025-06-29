@@ -5,6 +5,7 @@ const mainCont=document.querySelector(".main-cont")
 const textArea=document.querySelector(".textArea-cont")
 const allPriorityColors=document.querySelectorAll(".priority-color")
 const removeBtn=document.querySelector(".remove-btn")
+const allFilterColors=document.querySelectorAll(".color")
 
 //let over const
 let addTaskFlag=false
@@ -35,7 +36,7 @@ addBtn.addEventListener('click',function(){
 })
 
 //function to add a new ticket/task
-function createTicket(ticketColor,taskContent,taskId){
+function createTicket(ticketColor,taskContent,taskId,shouldAddToArray){
     //create a new ticket container element
     const ticketCont=document.createElement("div")
 
@@ -52,16 +53,20 @@ function createTicket(ticketColor,taskContent,taskId){
         </div>
     `
     //add remove handler on ticket-cont
-    handleRemoval(ticketCont)
+    handleRemoval(ticketCont,taskId)
 
     //add handle lock on ticket-cont
-    handleLock(ticketCont)
+    handleLock(ticketCont,taskId)
 
     //handle color of ticket 
-    handleColor(ticketCont)
+    handleColor(ticketCont,taskId)
 
-    //add ticket/task details inside taskarray
-    taskArray.push({taskId, ticketColor, taskContent})
+    //if shouldAddToArray is true then add to taskArray 
+    //(means only ticket creating time not filtering time)
+    if(shouldAddToArray){
+        //add ticket/task details inside taskarray
+        taskArray.push({ticketColor, taskContent, taskId})
+    }
 
     //append ticket inside main
     mainCont.appendChild(ticketCont)
@@ -77,7 +82,7 @@ modalCont.addEventListener('keydown',function(e){
         //pass in the required fields to create create ticket
         //ticketID + 1
         ticketID=ticketID + 1
-        createTicket(modalPriorityColor,taskContent,ticketID)
+        createTicket(modalPriorityColor,taskContent,ticketID,true)
         //modal hide
         modalCont.style.display="none"
         addTaskFlag=!addTaskFlag
@@ -120,16 +125,22 @@ removeBtn.addEventListener('click',function(){
 })
 
 //function to handle remove ticket
-function handleRemoval(ticket){
+function handleRemoval(ticket,taskId){
     ticket.addEventListener('click',function(){
         if(removeTaskFlag){
             ticket.remove()
+
+            //remove this task from taskArray (means updating taskArray)
+            //find index in taskArray
+            const currentTaskIndex=taskArray.findIndex((t)=>t.taskId==taskId)
+            //remove from taskArray
+            taskArray.splice(currentTaskIndex,1)
         }
     })
 }
 
 //function to handle locking mechanism on ticket/task
-function handleLock(ticket){
+function handleLock(ticket,taskId){
     //select the ticket-lock element on ticket
     const ticketLockElement=ticket.querySelector(".ticket-lock")
     //select the task-area element on ticket
@@ -155,12 +166,18 @@ function handleLock(ticket){
             ticketLockIcon.classList.add("fa-lock")
             //task-area non-editable
             ticketTaskElement.setAttribute("contenteditable","false")
+
+            //updating ticket/task content inside taskArray
+            //find the exact task that we want to update inside task array
+            const currentTask=taskArray.find((task)=>task.taskId==taskId)
+            //update
+            currentTask.taskContent=ticketTaskElement.innerText
         }
     })
 }
 
 //function to change ticket/task color
-function handleColor(ticket){
+function handleColor(ticket,taskId){
     //select the color element
     const colorElem=ticket.querySelector(".ticket-color")
     //add eventlistener to elem
@@ -184,5 +201,48 @@ function handleColor(ticket){
         colorElem.classList.remove(currentColor)
         //add new color class
         colorElem.classList.add(newColor)
+
+        //update the taskArray with the updated color
+        //find the exact task that we want to update inside task array
+        const currentTask=taskArray.find((task)=>task.taskId==taskId)
+        //update
+        currentTask.ticketColor=newColor
     })
 }
+
+//handle the filtering logic
+allFilterColors.forEach(function(colorElem){
+    //filter on single click
+    colorElem.addEventListener('click',function(){
+        //fetch color from colorElem
+        const selectFilterColor=colorElem.classList[0]
+        //create the filtered array from taskArray
+        const filteredArray=taskArray.filter((task)=>task.ticketColor==selectFilterColor)
+        //remove all ticket/task from screen (main container)
+        mainCont.innerHTML=""
+        //add-back the task from from filteredArray
+        filteredArray.forEach((task)=>{
+            createTicket(
+                task.ticketColor,
+                task.taskContent,
+                task.taskId,
+                false
+            )
+        })
+    })
+
+    //show all ticket on double click
+    colorElem.addEventListener('dblclick',function(){
+        //remove all filtered ticket/task from screen (main container)
+        mainCont.innerHTML=""
+        //add-back all the task from from taskArray
+        taskArray.forEach((task)=>{
+            createTicket(
+                task.ticketColor,
+                task.taskContent,
+                task.taskId,
+                false
+            )
+        })
+    })
+})
