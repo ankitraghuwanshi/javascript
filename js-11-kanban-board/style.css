@@ -1,161 +1,161 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-body{
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    background-color: black;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: black;
 }
-header{
-    color: white;
-    margin-top: 0.5rem;
-    margin-left: 45%;
-    height: 1rem;
+header {
+  color: white;
+  margin-top: 0.5rem;
+  margin-left: 45%;
+  height: 1rem;
 }
-.toolbox-cont{
-    height: 5rem; /* means 5*16px */
-    background-color: #4b4b4b;
-    display: flex;
-    align-items: center;
+.toolbox-cont {
+  height: 5rem; /* means 5*16px */
+  background-color: #4b4b4b;
+  display: flex;
+  align-items: center;
 }
 /* select all child of toolbox-cont by using */
-.toolbox-cont > *{
-    margin-left: 4rem;
+.toolbox-cont > * {
+  margin-left: 4rem;
 }
-.toolbox-priority-cont{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 5rem;
-    width: 30rem;
-    background-color: #3d3d3d;
+.toolbox-priority-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 5rem;
+  width: 30rem;
+  background-color: #3d3d3d;
 }
-.toolbox-priority-cont > *:hover{
-    height: 3.1rem;
-    width: 5.1rem;
-    cursor: pointer;
+.toolbox-priority-cont > *:hover {
+  height: 3.1rem;
+  width: 5.1rem;
+  cursor: pointer;
 }
-.color{
-    text-align: center;
-    height: 3rem;
-    width: 5rem;
-}
-
-.lightpink{
-    background-color: rgb(253, 141, 157);
-}
-.lightyellow{
-    background-color: yellow;
-}
-.lightgreen{
-    background-color: rgb(107, 202, 107);
-}
-.lightblue{
-    background-color: rgb(55, 148, 179);
+.color {
+  text-align: center;
+  height: 3rem;
+  width: 5rem;
 }
 
-.action-btn-cont{
-    height: 3.5rem;
-    width: 8rem;
-    background-color: #4b4b4b;
-    display: flex;
+.lightpink {
+  background-color: rgb(253, 141, 157);
 }
-.action-btn-cont > *{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    width: 50%;
-    font-size: 2rem;
+.lightyellow {
+  background-color: yellow;
 }
-.add-btn:hover{
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: green;
-    background-color: #3d3d3d;
+.lightgreen {
+  background-color: rgb(107, 202, 107);
 }
-.remove-btn:hover{
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: red;
-    background-color: #3d3d3d;
+.lightblue {
+  background-color: rgb(55, 148, 179);
 }
 
-.main-cont{
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    gap: 2rem;
-    flex-wrap: wrap;
+.action-btn-cont {
+  height: 3.5rem;
+  width: 8rem;
+  background-color: #4b4b4b;
+  display: flex;
 }
-.ticket-cont{
-    height: 12rem;
-    width: 15rem;
-    background-color: white;
-    position: relative;
+.action-btn-cont > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 50%;
+  font-size: 2rem;
 }
-.ticket-color{
-    height: 2rem;
+.add-btn:hover {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: green;
+  background-color: #3d3d3d;
 }
-.ticket-id{
-    height: 1rem;
-    background-color: whitesmoke;
+.remove-btn:hover {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: red;
+  background-color: #3d3d3d;
 }
-.ticket-lock{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 2.5rem;
-    width: 2.5rem;
-    bottom: 5px;
-    right: 5px;
+
+.main-cont {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-.ticket-lock:hover{
-    cursor: pointer;
-    height: 2.7rem;
-    width: 2.7rem;
+.ticket-cont {
+  height: 12rem;
+  width: 15rem;
+  background-color: white;
+  position: relative;
 }
-.task-area{
-    overflow-wrap: break-word;
+.ticket-color {
+  height: 2rem;
 }
-.modal-cont{
-    position: absolute;
-    top: 30%;
-    left: 25%;
-    height: 50%;
-    width: 45%;
-    display: none;
+.ticket-id {
+  height: 1rem;
+  background-color: whitesmoke;
 }
-.textArea-cont{
-    height: 100%;
-    width: 75%;
-    outline: none;
-    border: none;
-    background-color: #dfe4ea;
-    color: black;
-    font-size: 2rem;
-    resize: none;
+.ticket-lock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 2.5rem;
+  width: 2.5rem;
+  bottom: 5px;
+  right: 5px;
 }
-.priority-colors-cont{
-    height: 100%;
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #4b4b4b;
+.ticket-lock:hover {
+  cursor: pointer;
+  height: 2.7rem;
+  width: 2.7rem;
 }
-.priority-colors-cont > *:hover{
-    height: 3.1rem;
-    width: 5.1rem;
-    cursor: pointer;
+.task-area {
+  overflow-wrap: break-word;
 }
-.priority-color{
-    height:3rem;
-    width: 5rem;
+.modal-cont {
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  height: 50%;
+  width: 45%;
+  display: none;
 }
-.active{
-    border: 3px solid white;
+.textArea-cont {
+  height: 100%;
+  width: 75%;
+  outline: none;
+  border: none;
+  background-color: #dfe4ea;
+  color: black;
+  font-size: 2rem;
+  resize: none;
+}
+.priority-colors-cont {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #4b4b4b;
+}
+.priority-colors-cont > *:hover {
+  height: 3.1rem;
+  width: 5.1rem;
+  cursor: pointer;
+}
+.priority-color {
+  height: 3rem;
+  width: 5rem;
+}
+.active {
+  border: 3px solid white;
 }

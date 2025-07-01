@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kanabn-board</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <header>KANBAN BOARD</header>
     <nav class="toolbox-cont">
-        <div class="toolbox-priority-cont">
-            <div class="lightpink color">Backlog</div>
-            <div class="lightyellow color">Pending</div>
-            <div class="lightgreen color">Review</div>
-            <div class="lightblue color">Done</div>
+      <div class="toolbox-priority-cont">
+        <div class="lightpink color">Backlog</div>
+        <div class="lightyellow color">Pending</div>
+        <div class="lightgreen color">Review</div>
+        <div class="lightblue color">Done</div>
+      </div>
+      <div class="action-btn-cont">
+        <div class="add-btn">
+          <i class="fa-solid fa-plus"></i>
         </div>
-        <div class="action-btn-cont">
-            <div class="add-btn">
-                <i class="fa-solid fa-plus"></i>
-            </div>
-            <div class="remove-btn">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
+        <div class="remove-btn">
+          <i class="fa-solid fa-xmark"></i>
         </div>
+      </div>
     </nav>
 
     <main class="main-cont">
-        <!-- generate ticket inside this container -->
-        <!-- <div class="ticket-cont">
+      <!-- generate ticket inside this container -->
+      <!-- <div class="ticket-cont">
             <div class="ticket-color ${ticketColor}"></div>
             <div class="ticket-id">task-id--${ticketID}</div>
             <div class="task-area">${text}</div>
@@ -38,20 +38,20 @@
     </main>
 
     <div class="modal-cont">
-        <textarea class="textArea-cont" placeholder="Type here"></textarea>
-        <div class="priority-colors-cont">
-            <div class="lightpink priority-color active"></div>
-            <div class="lightyellow priority-color"></div>
-            <div class="lightgreen priority-color"></div>
-            <div class="lightblue priority-color"></div>
-        </div>
+      <textarea class="textArea-cont" placeholder="Type here"></textarea>
+      <div class="priority-colors-cont">
+        <div class="lightpink priority-color active"></div>
+        <div class="lightyellow priority-color"></div>
+        <div class="lightgreen priority-color"></div>
+        <div class="lightblue priority-color"></div>
+      </div>
     </div>
 
-    <script 
-        src="https://kit.fontawesome.com/c092c71f5d.js"
-        crossorigin="anonymous"
+    <script
+      src="https://kit.fontawesome.com/c092c71f5d.js"
+      crossorigin="anonymous"
     ></script>
     <script src="./script.js"></script>
     <!-- <script src="./localStorage.js"></script> -->
-</body>
+  </body>
 </html>
