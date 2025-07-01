@@ -158,6 +158,10 @@ function handleRemoval(ticket, taskId) {
       const currentTaskIndex = taskArray.findIndex((t) => t.taskId == taskId);
       //remove from taskArray
       taskArray.splice(currentTaskIndex, 1);
+
+      //update local storage
+      //it override the update
+      localStorage.setItem("tickets", JSON.stringify(taskArray))
     }
   });
 }
@@ -195,6 +199,10 @@ function handleLock(ticket, taskId) {
       const currentTask = taskArray.find((task) => task.taskId == taskId);
       //update
       currentTask.taskContent = ticketTaskElement.innerText;
+
+      //update in local storage also
+      //it override the update in localstorage
+      localStorage.setItem("tickets", JSON.stringify(taskArray))
     }
   });
 }
@@ -232,6 +240,10 @@ function handleColor(ticket, taskId) {
     const currentTask = taskArray.find((task) => task.taskId == taskId);
     //update
     currentTask.ticketColor = newColor;
+
+    //update in localstorage also 
+    //it override update in local storage
+    localStorage.setItem("tickets", JSON.stringify(taskArray))
   });
 }
 
