@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <header>KANBAN BOARD</header>
+    <header title="kanban board">KANBAN BOARD</header>
     <nav class="toolbox-cont">
-      <div class="toolbox-priority-cont">
+      <div class="toolbox-priority-cont" title="filter by color">
         <div class="lightpink color">Backlog</div>
         <div class="lightyellow color">Pending</div>
         <div class="lightgreen color">Review</div>
         <div class="lightblue color">Done</div>
       </div>
       <div class="action-btn-cont">
-        <div class="add-btn">
+        <div class="add-btn" title="add ticket/task">
           <i class="fa-solid fa-plus"></i>
         </div>
-        <div class="remove-btn">
+        <div class="remove-btn" title="remove ticket/task">
           <i class="fa-solid fa-xmark"></i>
         </div>
+      </div>
+      <div class="instruction-btn" title="instruction">
+        <i class="fa-solid fa-info"></i>
       </div>
     </nav>
 
@@ -45,6 +48,20 @@
         <div class="lightgreen priority-color"></div>
         <div class="lightblue priority-color"></div>
       </div>
+    </div>
+
+    <div class="instruction">
+        <ol>
+            <li>Click on <span class="green">'+'</span> button to add <span class="special">ticket/task</span> ,then choose color based on <span class="special">ticket/task</span> state, then type <span class="special">ticket/task</span> text, then press shift key</li>
+            <li>Click on <span class="red">'x'</span> button to remove <span class="special">ticket/task</span>,after pressing <span class="red">'x'</span> button click on 'ok' button ,it means now you can <span class="red">remove/delete</span> <span class="special">ticket/task</span>, click on <span class="special">ticket/task</span> that you want to <span class="red">remove/delete</span></li>
+            <li>Note:-you can delete as many <span class="special">ticket/task</span> as you want</li>
+            <li>If you click <span class="red">'x'</span> button again ,then 'ok' button ,now you cann't <span class="red">remove/delete</span> any <span class="special">ticket/task</span> </li>
+            <li>If you want to change the text/content of <span class="special">ticket/task</span> then, you should first click on that <span class="special">ticket/task</span> lock icon,by doing that lock will open, now you can change the text/content, if you press again the open-lock icon, now you cann't change the text/content of <span class="special">ticket/task</span></li>
+            <li>On top left, if you click on any color then <span class="special">ticket/task</span> gets filtered and you can now only sees <span class="special">ticket/task</span> having color that you press</li>
+            <li>Means from filtering, you can focus on how many <span class="special">ticket/task</span> are there in that state</li>
+            <li>Remember: <span class="pink">pink</span>=backlog, <span class="yellow">yellow</span>=pending, <span class="green">green</span>=overview, <span class="blue">blue</span>=done</li>
+            <li>you can change the color/state of particular <span class="special">ticket/task</span> by clicking on that <span class="special">ticket/task</span> color</li>
+        </ol>
     </div>
 
     <script

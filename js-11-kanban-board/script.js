@@ -6,6 +6,8 @@ const textArea = document.querySelector(".textArea-cont");
 const allPriorityColors = document.querySelectorAll(".priority-color");
 const removeBtn = document.querySelector(".remove-btn");
 const allFilterColors = document.querySelectorAll(".color");
+const instructionBtn=document.querySelector(".instruction-btn")
+const instruction=document.querySelector(".instruction")
 
 //let over const
 let addTaskFlag = false;
@@ -275,3 +277,14 @@ allFilterColors.forEach(function (colorElem) {
     });
   });
 });
+
+//instruction btn 
+let instructionFlag=false
+instructionBtn.addEventListener('click',function(){
+    instructionFlag=!instructionFlag
+    if(instructionFlag){
+        instruction.style.display="flex"
+    }else{
+        instruction.style.display="none"
+    }
+})
