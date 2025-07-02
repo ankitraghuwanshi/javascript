@@ -1,0 +1,65 @@
+<!-- //event delegation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            padding: 20px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 100px;
+            width: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="card">card1</div>
+        <div class="card">card2</div>
+        <div class="card">card3</div>
+        <div class="card">card4</div>
+        <div class="card">card5</div>
+        <div class="card">card6</div>
+        <div class="card">card7</div>
+        <div class="card" id="special">card8</div>
+        <div class="card">card9</div>
+        <div class="card">card10</div>
+        <div class="card">card11</div>
+    </div>
+
+    <script>
+        //up-optimized way (adding .addEventlistener to all card)
+        // const allCards=document.querySelectorAll(".card")
+        // allCards.forEach((elem)=>{
+        //     elem.addEventListener('click',()=>{
+        //         console.log(elem.innerText)
+        //     })
+        // })
+        
+        //optimized way (adding single .addeventListener to parent of all card)
+        const parent=document.querySelector(".parent")
+        parent.addEventListener('click',(e)=>{
+            //console.log(e.target,e.currentTarget)
+            console.log(e.target.innerText)
+        })
+
+
+        //Q.is it possible to stop all other event listners triggering, except clicked on child?
+        // Use this very carefully
+        // Because this will stop
+        // any propogation of events
+        const stopId=document.querySelector("#special")
+        stopId.addEventListener('click', (e) => {
+            e.stopPropagation()
+        })
+
+    </script>
+</body>
+</html>

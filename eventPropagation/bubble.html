@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+    <style>
+        .grandParent{
+            border: 1px solid black;
+            padding: 40px;
+        }
+        .parent{
+            border: 1px solid red;
+            padding: 30px;
+        }
+        .child{
+            border: 1px solid green;
+            padding: 20px;
+        }
+        .grandChild{
+            border: 1px solid blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grandParent">GP
+        <div class="parent">P
+            <div class="child">C
+                <div class="grandChild">GC</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grandParent=document.querySelector(".grandParent")
+        const parent=document.querySelector(".parent")
+        const child=document.querySelector(".child")
+        const grandChild=document.querySelector(".grandChild")
+
+
+        //there is third argument in addeventListener for eventPropagation
+        //false for bubbling phase (default)
+        //true for capturing phase
+        grandParent.addEventListener('click',()=>{console.log("grandparent")})
+        parent.addEventListener('click',()=>{console.log("parent")})
+        child.addEventListener('click',()=>{console.log("child")})
+        grandChild.addEventListener('click',()=>{console.log("grandchild")})
+
+        //what if we make false for any one of div???
+        //event propagation occured two time first capturing phase then second is bubbling phase
+        //console.log will print based on third attribute true/false
+    </script>
+</body>
+</html>
