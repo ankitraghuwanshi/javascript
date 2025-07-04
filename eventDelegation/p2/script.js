@@ -10,9 +10,7 @@ starsParent.addEventListener('click',function(e){
         if(currentValue<=dataValue){
             star.classList.add("filled")
         }else{
-            if(star.classList.contains("filled")){
-                star.classList.remove("filled")
-            }
+            star.classList.remove("filled")
         }
     })
     rating.innerText=dataValue
