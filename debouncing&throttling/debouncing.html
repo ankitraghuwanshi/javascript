@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce</title>
+</head>
+<body>
+    <input type="text" id="input-field" placeholder="search">
+
+    <script>
+        const inputField=document.getElementById("input-field")
+
+        function processInput(e){
+            console.log("Processing Input")
+            console.log("Making fake API call with", e.target.value)
+        }
+        function debounce(fn,delay,isLeading){
+            let timeout=null
+            return function internalFunction(e){
+                if(timeout){
+                    clearTimeout(timeout)
+                }else{
+                    if(isLeading){
+                        //for word first leading letter
+                        fn(e)
+                        isLeading=!isLeading
+                    }
+                }
+                timeout=setTimeout(()=>{
+                    clearTimeout(timeout)
+                    fn(e)
+                },delay)
+            }
+        }
+        const debouncedProcessInput = debounce(processInput, 1000, true)
+
+        inputField.addEventListener('keyup', debouncedProcessInput)
+
+    </script>
+</body>
+</html>
