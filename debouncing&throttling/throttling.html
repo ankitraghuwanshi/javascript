@@ -22,7 +22,29 @@
     <div class="status">Scroll position: <span id="scrollPosition">0</span></div>
 
     <script>
-        
+                    
+        const delay=1000
+        let lastScrollTime=0
+        let currentScrollLocation=0
+
+        window.addEventListener('scroll',()=>{
+
+            const now=new Date().getTime()
+            
+            //to limit multiple scrolling event call for scroll position change
+            if(now-lastScrollTime>delay){
+                //to prevent upward scrolling event call for scroll position change
+                if(window.scrollY>currentScrollLocation){
+                    document.getElementById("scrollPosition").innerText=window.scrollY
+                    console.log("scrolling")
+
+                    lastScrollTime=now
+
+                    currentScrollLocation=window.scrollY
+                }
+            }
+        })
+        <!-- // Homework -> Try to implement this with setTimeout (not Date().getTime())-->
     </script>
 </body>
 </html>
