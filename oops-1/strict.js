@@ -1,6 +1,6 @@
 //for strict mode just type
 //a.For a whole script:
-// "use strict";
+//"use strict";
 
 // //b.for Inside a function:
 // function doSomething() {
@@ -26,10 +26,7 @@
 
 
 // //2. this in Functions
-// function show() {
-//   console.log(this);
-// }
-// show(); 
+ 
 // // Non-strict: `window object` `global object`
 // // Strict: `undefined`
 
@@ -44,4 +41,4 @@
 
 // //4. Deleting Properties
 // "use strict";
-// delete Object.prototype;  // TypeError
+//delete Object.prototype;  // TypeError
