@@ -42,3 +42,7 @@
 // //4. Deleting Properties
 // "use strict";
 //delete Object.prototype;  // TypeError
+
+//5.but no change in this situation
+//"use strict";
+//console.log(this)
