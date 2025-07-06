@@ -59,16 +59,42 @@
 
 //scenerio-4
 //what if we nest a function inside an object and run it independently
-const obj2={
-    prop:"prop",
-    outerFn:function(){
-        //this will print obj2
-        console.log("outer",this)
-        var innerFn=function(){
-            //this will print global object, because of nested function, its running on its own
-            console.log("inner",this)
-        }
-        innerFn()
-    }
-}
-obj2.outerFn()
+// const obj2={
+//     prop:"prop",
+//     outerFn:function(){
+//         //this will print obj2
+//         console.log("outer",this)
+//         var innerFn=function(){
+//             //this will print global object, because of nested function, its running on its own
+//             console.log("inner",this)
+//         }
+//         innerFn()
+//     }
+// }
+// obj2.outerFn()
+
+//example from chatgpt
+// function show() {
+//   console.log(this);
+// }
+
+// const obj = {
+//   show: show
+// };
+
+// show();        // How? Called as a plain function → this = window (or undefined in strict mode)
+// obj.show();    // How? Called as a method of obj → this = obj
+
+//example-2 by chatgpt
+// const user = {
+//   name: "Alex",
+//   greet: function () {
+//     console.log(this.name);
+//   }
+// };
+
+// const greetFunc = user.greet;
+
+// greetFunc();         // How? Plain function call → this = window (or undefined)
+// user.greet();        // How? Method call → this = user
+
