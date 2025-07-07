@@ -1,11 +1,11 @@
 class Pizza{
     //private properties
-    #secretIngredient
+    #secretIngredient;
     constructor(topping,size,crust){
         this.topping=topping;
         this.size=size;
         this.crust=crust;
-        this.#secretIngredient="pineapple"
+        this.#secretIngredient="pineapple";
     }
     describe(){
         console.log(`this pizza has size "${this.size}" and "${this.crust}" crust with "${this.topping}" topping`)
