@@ -13,5 +13,6 @@ class Pizza{
 }
 const pizza1=new Pizza("capsicum","M","thin")
 const pizza2=new Pizza(["capsicum","paneer"],"M","thin")
-console.log(pizza1.#secretIngredient)    //syntaxError
+//console.log(pizza1.#secretIngredient)
+//syntaxError
 
