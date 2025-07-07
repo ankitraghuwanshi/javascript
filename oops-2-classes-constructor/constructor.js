@@ -2,16 +2,16 @@ function Pizza(topping,size,crust){
     this.topping=topping;
     this.size=size;
     this.crust=crust;
-    this.discribe=function(){
+    this.describe=function(){
         console.log(`this pizza has size "${this.size}" and "${this.crust}" crust with "${this.topping}" topping`)
     }
 }
 const pizza1=new Pizza("capsicum","M","thin")
 console.log(pizza1)
-pizza1.discribe()
+pizza1.describe()
 const pizza2=new Pizza(['capsicum',"cheese","paneer","onion"],"L","pan")
 console.log(pizza2)
-pizza2.discribe()
+pizza2.describe()
 
 //when we hover over Pizza,it says
 //"this constructor function may be coverted to a class declaration"
