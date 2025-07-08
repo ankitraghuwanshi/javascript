@@ -1,12 +1,13 @@
 // What happens when we explicitly set __proto__ to null
 
-const car = {
+const carObj = {
     make: "Tesla",
     year: 2020
 }
 
-// Earlier this was Object()
-car.__proto__ = null
+// Earlier this has Object()
+carObj.__proto__ = null
+//but now carObj root object prototype is gone(null)
 
-console.log(car)
-console.log(car.hasOwnProperty("make"))
+console.log(carObj)
+//console.log(carObj.hasOwnProperty("make"))      //error
