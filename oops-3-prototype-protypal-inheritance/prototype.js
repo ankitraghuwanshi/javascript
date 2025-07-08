@@ -64,3 +64,12 @@ car1.dispalyInfo()
 // //or if we create array then array also get unknown/not-required property in root prototype
 // const ar=[1,2,3]
 // console.log(ar)
+//so we never use Object.prototype
+
+// //7.__proto__(it will work but try to avoid it)
+// CarNew.prototype.__proto__.hello = function(){
+//                                 console.log("hi this is proto")
+//                             }
+// const car2=new CarNew('thar',2028)
+// console.log(car2)
+// CarNew.hello()
