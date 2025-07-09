@@ -34,7 +34,7 @@ console.log(Math.max(...nums))
 // WHen used in fn definition, it converts the function arguments into array
 // Whenever you want to accept a dynamic number of arguments
 
-// function test(...args) {
-//     console.log(args)       //[10,12,13] 
-// }
-// test(10, 12, 13)
+function test(...args) {
+    console.log(args)       //print [10,12,13] 
+}
+test(10, 12, 13)
