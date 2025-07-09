@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind use-case</title>
+</head>
+<body>
+    <button id="intro" type="button">press please</button>
+
+    <script>
+        const person={
+            name:"ankit",
+            age:28,
+            introduction:function(){
+                console.log(`my name is ${this.name}, ${this.age} year old`)
+            }
+        }
+        //bind
+        const myIntro=person.introduction.bind(person)
+        //select button
+        const btn=document.getElementById("intro")
+
+        //this will not work
+        //btn.addEventListener('click',person.introduction)   //my name is , undefined year old
+
+        
+        //this will work ,because .bind()
+        btn.addEventListener('click',myIntro)                //my name is ankit, 28 year old
+    </script>
+</body>
+</html>
