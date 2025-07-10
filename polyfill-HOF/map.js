@@ -27,7 +27,7 @@ if(!Array.prototype.mymap){
             //check if index value is not empty
             //it prevent from sparse array containing empty value
             if(i in this){
-                const mappedValue=callback(this[i])
+                const mappedValue=callback(this[i],i,this)
                 //4.Push the new mappedValue into the final Array
                 result[i] = mappedValue
             }

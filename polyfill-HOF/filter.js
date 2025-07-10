@@ -26,13 +26,13 @@ if(!Array.prototype.myfilter){
         }
         //2.create a new array
         const result=[]
-        //3.Iterate over the array and run the callback, add the value in the result
+        //3.Iterate over the array and run the callback, push the value in the result
         for(let i=0;i<this.length;i++){
             //check if index value is not empty
             //it prevent from sparse array containing empty value
             if(i in this){
-                const condition=callback(this[i])
-                //4.Push the new mappedValue into the final Array
+                const condition=callback(this[i],i,this)
+                //4.Push the value this[i] in the result Array,if codition is true
                 if(condition){
                     result.push(this[i])
                 }
