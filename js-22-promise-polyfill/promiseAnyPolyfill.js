@@ -19,35 +19,3 @@ Promise.myAny = function (promises) {
         })
     })
 }
-
-function fetchUserData() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            rej("Error")
-            res("User data fetched successfully")
-        }, 3000)
-    })
-}
-
-function fetchProductData() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            rej("Product data error!")
-        }, 2000)
-    })
-}
-
-function fetchProfileData() {
-    return new Promise((res, rej) => {
-        setTimeout(() => {
-            // rej("Error")
-            res("Profile data fetched successfully")
-        }, 5000)
-    })
-}
-
-Promise.myAny([fetchUserData(), fetchProductData(), fetchProfileData()]).then((val) => {
-    console.log(val)
-}).catch((e) => {
-    console.log(e)
-})

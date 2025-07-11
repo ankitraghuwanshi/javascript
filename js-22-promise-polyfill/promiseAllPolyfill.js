@@ -1,25 +1,3 @@
-function fetchUserData(){
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            res("fetch-user-data resolved")
-        },1000)
-    })
-}
-function fetchProductData(){
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            res("fetch-product-data resolved")
-        },2000)
-    })
-}
-function fetchProfileData(){
-    return new Promise((res,rej)=>{
-        setTimeout(()=>{
-            res("fetch-profile-data resolved")
-        },3000)
-    })
-}
-
 //stores value of resolved promise in array
 //if any reject then return 
 Promise.myall =function(promises){
@@ -39,6 +17,28 @@ Promise.myall =function(promises){
                 rej(e)
             })
         })
+    })
+}
+
+function fetchUserData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-user-data resolved")
+        },1000)
+    })
+}
+function fetchProductData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-product-data resolved")
+        },2000)
+    })
+}
+function fetchProfileData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-profile-data resolved")
+        },3000)
     })
 }
 
