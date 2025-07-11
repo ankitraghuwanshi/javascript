@@ -1,0 +1,30 @@
+function fetchUserData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-user-data resolved")
+        },1000)
+    })
+}
+function fetchProductData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-product-data resolved")
+        },1000)
+    })
+}
+function fetchProfileData(){
+    return new Promise((res,rej)=>{
+        setTimeout(()=>{
+            res("fetch-profile-data resolved")
+        },1000)
+    })
+}
+
+Promise
+.any([fetchUserData(),fetchProductData(),fetchProfileData()])
+.then((val)=>{console.log(val)})
+.catch((e)=>{console.log(e)})
+
+//so
+// Combinator	              Resolves When	                      Rejects When
+//Promise.any()	             First to resolve	                All promises reject
