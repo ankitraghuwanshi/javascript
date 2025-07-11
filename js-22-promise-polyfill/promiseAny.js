@@ -9,21 +9,21 @@ function fetchProductData(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
             res("fetch-product-data resolved")
-        },1000)
+        },2000)
     })
 }
 function fetchProfileData(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
             res("fetch-profile-data resolved")
-        },1000)
+        },3000)
     })
 }
 
 Promise
 .any([fetchUserData(),fetchProductData(),fetchProfileData()])
 .then((val)=>{console.log(val)})
-.catch((e)=>{console.log(e)})
+.catch(()=>{console.log("AggregateError: All promises were rejected")})
 
 //so
 // Combinator	              Resolves When	                      Rejects When

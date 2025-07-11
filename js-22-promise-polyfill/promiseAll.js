@@ -9,14 +9,14 @@ function fetchProductData(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
             res("fetch-product-data resolved")
-        },1000)
+        },2000)
     })
 }
 function fetchProfileData(){
     return new Promise((res,rej)=>{
         setTimeout(()=>{
             res("fetch-profile-data resolved")
-        },1000)
+        },3000)
     })
 }
 
