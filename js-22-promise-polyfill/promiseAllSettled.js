@@ -23,6 +23,7 @@ function fetchProfileData(){
 Promise
 .allSettled([fetchUserData(),fetchProductData(),fetchProfileData()])
 .then((val)=>{console.log(val)})
+.catch((e)=>{console.log(e)})
 //note:-no use of catch
 
 //note: it gives status and value, like

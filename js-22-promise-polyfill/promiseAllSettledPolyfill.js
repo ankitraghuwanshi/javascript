@@ -17,7 +17,7 @@ Promise.myallsettled =function(promises){
                 resultArray[index]={ status: 'rejected', reason: e }
                 total=total+1
                 if(total===promises.length){
-                    res(resultArray)
+                    rej(resultArray)
                 }
             })
         })
